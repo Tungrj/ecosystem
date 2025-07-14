@@ -1,0 +1,76 @@
+import openai
+import sys
+import argparse
+
+
+# Set up your OpenAI API key
+openai.api_key = ''
+
+# Setup command-line argument parser
+parser = argparse.ArgumentParser(description="Analyze clinician transcript using NPT framework.")
+parser.add_argument("filename", help="Path to the .txt transcript file")
+args = parser.parse_args()
+
+# Load the specified transcript file
+with open(args.filename, "r", encoding="utf-8") as file:
+    transcript_text = file.read()
+
+
+npt_prompt = f"""
+You are a qualitative research assistant trained in implementation science and the Normalization Process Theory (NPT).
+
+Your task is to analyze an in-depth interview with a clinician discussing their views on adopting genetic risk-based breast cancer screening into clinical practice.
+
+Use the following construct of NPT to guide your analysis:
+Reflexive Monitoring – How the clinician assesses the impact or value of the screening model.
+
+For each construct:
+- Identify four sub-themes or concerns 
+- Provide a brief explanation for each sub-theme
+- Include at least one representative quote
+- Flag any resistance, uncertainty, or enthusiasm
+
+Focus on issues such as:
+- Clinical utility and relevance of genetic information
+- Workload, training, and workflow integration
+- Trust in the science and evidence
+- Patient communication and equity concerns
+- System-level support or constraints
+
+Here is the clinician interview transcript:
+{transcript_text}
+
+
+
+=== REFLEXIVE MONITORING (Appraisal) ===
+- Sub-theme 1: Explanation 
+  - "Representative quote"
+
+- Sub-theme 2: Explanation 
+  - "Representative quote"
+
+- Sub-theme 3: Explanation 
+  - "Representative quote"
+
+- Sub-theme 4: Explanation 
+  - "Representative quote"
+
+
+
+
+
+=== ANALYTIC NOTES ===
+- Additional comments on ambiguous quotes, tensions, or overlapping constructs
+"""
+
+# Call GPT-4 Turbo
+response = openai.ChatCompletion.create(
+    model="gpt-4-1106-preview",
+    messages=[
+        {"role": "user", "content": npt_prompt}
+    ],
+    temperature=0.3  # More deterministic output
+)
+
+# Print the result
+print(response['choices'][0]['message']['content'])
