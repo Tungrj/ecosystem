@@ -19,7 +19,7 @@ This repository contains files and scripts used in a qualitative research projec
 ├── Data/
 │   └── Mock_Dataset.xlsx
 ├── R.Scripts/
-│   ├── Sentiment Analysis.R
+│   ├── Alluvial_plots.R
 │   └── TF-IDF.R
 ├── README.md
 ```
