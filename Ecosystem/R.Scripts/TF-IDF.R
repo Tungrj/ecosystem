@@ -9,7 +9,7 @@
 
 
 ## Load Required Packages
-install.packages(c("tidyverse", "tidytext", "tm", "wordcloud2", "ggplot2", "stringr"))
+install.packages(c("tidyverse", "tidytext", "tm", "ggplot2", "stringr"))
 library(tidyverse)
 library(tidytext)
 library(tm)
