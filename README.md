@@ -59,3 +59,8 @@ This project uses mixed methods to explore stakeholders' perspectives on the imp
 ## 🧠 Tools & Libraries Used
 
 All quantitative analyses were conducted using **R**. TF-IDF scores were calculated using `tidytext::bind_tf_idf`, which helped identify terms unique to different stakeholder groups. Alluvial plots were generated with `ggalluvial:: geom_alluvium` to visualize the flow and distribution of themes across roles or categories.
+
+---
+
+## ⚠️ Disclaimer
+The code in this repository is intended to demonstrate logic and structure only. It may not produce accurate or meaningful results if run, as it uses a dummy dataset for illustration purposes.
