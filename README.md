@@ -4,7 +4,7 @@ This repository contains files and scripts used in a qualitative research projec
 
 - 🗂️ Mock dataset
 - ⚙️ API prompts for language model-assisted analysis  
-- 📊 R scripts for generating **alluvial diagrams** and **TF-IDF visualizations**
+- 📊 R scripts for generating **saturation diagrams** and **TF-IDF visualizations**
 
 ---
 
@@ -19,9 +19,9 @@ This repository contains files and scripts used in a qualitative research projec
 ├── Data/
 │   └── Mock_Dataset.xlsx
 ├── R.Scripts/
-│   ├── Alluvial_plots.R
 │   ├── TF-IDF.R
-│   └── saturation_table.R
+│   ├── saturation_table.R
+│   └── sentiment_summary.R
 ├── README.md
 ```
 
@@ -58,7 +58,7 @@ This project uses mixed methods to explore stakeholders' perspectives on the imp
 
 ## 🧠 Tools & Libraries Used
 
-All quantitative analyses were conducted using **R**. TF-IDF scores were calculated using `tidytext::bind_tf_idf`, which helped identify terms unique to different stakeholder groups. Alluvial plots were generated with `ggalluvial:: geom_alluvium` to visualize the flow and distribution of themes across roles or categories.
+All quantitative analyses were conducted using **R**. TF-IDF scores were calculated using `tidytext::bind_tf_idf`, which helped identify terms unique to different stakeholder groups.
 
 ---
 
